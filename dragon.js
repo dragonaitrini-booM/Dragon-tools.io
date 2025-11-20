@@ -24,7 +24,7 @@
 
 
     /* ---------- One-Click Fork & Clone Button (Hook 2) ---------- */
-    // NOTE: This function's initialization is commented out below 
+    // NOTE: This function is preserved but its initializer is commented out below 
     // because the 'fork-clone-btn' was replaced with a direct link in the HTML.
     const initForkButton = () => {
         const forkBtn = document.getElementById('fork-clone-btn');
@@ -68,7 +68,7 @@ code .`;
     };
 
 
-    /* ---------- neural-network canvas (Existing Logic) ---------- */
+    /* ---------- neural-network canvas (RESTORED VISUAL LOGIC) ---------- */
     const initNeuralNetwork = () => {
         const canvas = document.getElementById('neural-network');
         if (!canvas) return;
@@ -94,7 +94,8 @@ code .`;
                 if (p.x < 0 || p.x > w) p.vx *= -1;
                 if (p.y < 0 || p.y > h) p.vy *= -1;
                 
-                ctx.fillStyle = 'rgba(0,229,255,0.6)';
+                // RESTORED: Cyber Blue particle color
+                ctx.fillStyle = 'rgba(0,229,255,0.6)'; 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                 ctx.fill();
@@ -104,6 +105,7 @@ code .`;
                     const dy = p.y - particles[j].y;
                     const d = Math.hypot(dx, dy);
                     if (d < 150) {
+                        // RESTORED: Dragon Orange/Amber line color
                         ctx.strokeStyle = `rgba(255,165,0, ${1 - d / 150})`; 
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
@@ -156,7 +158,6 @@ code .`;
                     l.classList.toggle('active', isActive);
                 }
                 // NOTE: Links to external pages (like infrastructure.html or opportunities.html) will NOT receive the active class via scroll tracking.
-                // This is correct behavior for a single-page scroller with external links.
             });
         });
     };
@@ -165,7 +166,7 @@ code .`;
     /* ---------- Initializer: Run all functions once the DOM is ready ---------- */
     document.addEventListener('DOMContentLoaded', () => {
         initHeartbeat(); // Hook 1
-        // initForkButton(); // Hook 2 - COMMENTED OUT as the button was replaced with a direct link in HTML
+        // initForkButton(); // Hook 2 - COMMENTED OUT to prevent silent errors due to missing button ID
         initNeuralNetwork(); // Background
         initSmoothScroll(); // UX
         initNavActiveState(); // UX
