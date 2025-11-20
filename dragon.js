@@ -24,6 +24,8 @@
 
 
     /* ---------- One-Click Fork & Clone Button (Hook 2) ---------- */
+    // NOTE: This function's initialization is commented out below 
+    // because the 'fork-clone-btn' was replaced with a direct link in the HTML.
     const initForkButton = () => {
         const forkBtn = document.getElementById('fork-clone-btn');
         if (!forkBtn) return;
@@ -73,7 +75,7 @@ code .`;
         const ctx = canvas.getContext('2d');
         let w = (canvas.width = innerWidth);
         let h = (canvas.height = innerHeight);
-    
+        
         const particles = Array.from({ length: 60 }, () => ({
             x: Math.random() * w,
             y: Math.random() * h,
@@ -81,22 +83,22 @@ code .`;
             vy: (Math.random() - 0.5) * 1.5,
             r: Math.random() * 1.5 + 0.7
         }));
-    
+        
         function draw() {
             ctx.clearRect(0, 0, w, h);
             ctx.lineWidth = 1;
-    
+            
             particles.forEach((p, i) => {
                 p.x += p.vx;
                 p.y += p.vy;
                 if (p.x < 0 || p.x > w) p.vx *= -1;
                 if (p.y < 0 || p.y > h) p.vy *= -1;
-    
+                
                 ctx.fillStyle = 'rgba(0,229,255,0.6)';
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                 ctx.fill();
-    
+                
                 for (let j = i + 1; j < particles.length; ++j) {
                     const dx = p.x - particles[j].x;
                     const dy = p.y - particles[j].y;
@@ -113,7 +115,7 @@ code .`;
             requestAnimationFrame(draw);
         }
         draw();
-    
+        
         addEventListener('resize', () => {
             w = canvas.width = innerWidth;
             h = canvas.height = innerHeight;
@@ -142,8 +144,8 @@ code .`;
             const y = scrollY + 250;
             let current = '';
 
-            sections.forEach(s => { 
-                if (y >= s.offsetTop) current = s.id; 
+            sections.forEach(s => { 
+                if (y >= s.offsetTop) current = s.id; 
             });
 
             navLinks.forEach(l => {
@@ -153,7 +155,7 @@ code .`;
                     const isActive = linkSectionId === current;
                     l.classList.toggle('active', isActive);
                 }
-                // NOTE: Links to external pages (like infrastructure.html) will NOT receive the active class via scroll tracking.
+                // NOTE: Links to external pages (like infrastructure.html or opportunities.html) will NOT receive the active class via scroll tracking.
                 // This is correct behavior for a single-page scroller with external links.
             });
         });
@@ -163,7 +165,7 @@ code .`;
     /* ---------- Initializer: Run all functions once the DOM is ready ---------- */
     document.addEventListener('DOMContentLoaded', () => {
         initHeartbeat(); // Hook 1
-        initForkButton(); // Hook 2
+        // initForkButton(); // Hook 2 - COMMENTED OUT as the button was replaced with a direct link in HTML
         initNeuralNetwork(); // Background
         initSmoothScroll(); // UX
         initNavActiveState(); // UX
