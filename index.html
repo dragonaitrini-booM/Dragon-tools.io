@@ -1,235 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Critical meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Performance & security -->
-    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self';
-                   script-src  'self' 'unsafe-inline' https://www.genspark.ai;
-                   style-src   'self' 'unsafe-inline' https://fonts.googleapis.com;
-                   font-src    'self' https://fonts.gstatic.com;
-                   img-src     'self' data: https://www.genspark.ai;
-                   connect-src 'self' https://www.genspark.ai;
-                   frame-src   https://docs.google.com;">
-
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="color-scheme" content="dark light">
-
-    <!-- SEO -->
-    <title>🐲 DRAGON TOOLS – Architect the Future | Elite AI Infrastructure</title>
-    <meta name="description" content="Join the first autonomous AI collective in Trinidad & Tobago. Build sovereign systems, master AI partnership, architect your own economic future.">
-    <link rel="canonical" href="https://dragontools.ai/">
-
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="DRAGON TOOLS – Elite AI Infrastructure">
-    <meta property="og:description" content="Autonomous AI collective from Trinidad & Tobago. Zero-friction onboarding. Architect the future.">
-    <meta property="og:url" content="https://dragontools.ai/">
-    <meta property="og:image" content="https://www.genspark.ai/api/files/s/lE4g8mEk">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Dragon Tools Collective",
-      "url": "https://dragontools.ai/",
-      "logo": "https://www.genspark.ai/api/files/s/lE4g8mEk",
-      "sameAs": [],
-      "description": "Elite AI infrastructure collective based in Trinidad & Tobago."
-    }
-    </script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐲 DRAGON TOOLS - Architect the Future | Elite AI Infrastructure</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.genspark.ai/api/files/s/lE4g8mEk">
-
-    <!-- Critical inline CSS (above-the-fold only) -->
-    <style>
-        :root{
-            --bg:#0a0a0a;--fg:#e6e6e6;--accent:#00f2ff;--dragon:#ff3cac;
-            font-size:16px;
-        }
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{
-            background:var(--bg);
-            color:var(--fg);
-            font-family:'Space Grotesk',sans-serif;
-            line-height:1.6;
-            -webkit-font-smoothing:antialiased;
-        }
-        .quantum-nav{
-            position:fixed;top:0;left:0;right:0;z-index:1000;
-            background:rgba(10,10,10,.85);backdrop-filter:blur(8px);
-            border-bottom:1px solid rgba(0,242,255,.15);
-        }
-        .nav-container{
-            max-width:1280px;margin:0 auto;
-            display:flex;align-items:center;justify-content:space-between;
-            padding:.75rem 1.25rem;
-        }
-        .nav-brand{display:flex;align-items:center;gap:.5rem}
-        .nav-dragon-logo{width:28px;height:28px;object-fit:contain}
-        .brand-text{
-            font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.05rem;
-            letter-spacing:.5px;color:var(--accent);
-        }
-        .power-indicator{
-            width:8px;height:8px;border-radius:50%;
-            background:var(--accent);box-shadow:0 0 6px var(--accent);
-            animation:pulse 1.4s infinite;
-        }
-        @keyframes pulse{50%{opacity:.4}}
-        .nav-links{display:flex;gap:1.25rem}
-        .nav-link{
-            font-family:'Rajdhani',sans-serif;font-weight:500;font-size:.95rem;
-            color:var(--fg);text-decoration:none;letter-spacing:.5px;
-            transition:color .2s;
-        }
-        .nav-link:hover,.nav-link.active{color:var(--accent)}
-        .system-status{display:flex;align-items:center;gap:.5rem}
-        .status-text{
-            font-size:.75rem;font-family:'Rajdhani',sans-serif;
-            color:rgba(230,230,230,.7);
-        }
-        .status-pulse{
-            width:6px;height:6px;border-radius:50%;
-            background:#39ff14;box-shadow:0 0 4px #39ff14;
-            animation:pulse 1.2s infinite;
-        }
-        .hero-matrix{min-height:100vh;display:grid;place-content:center;text-align:center;padding:6rem 1.25rem 3rem}
-        .quantum-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,4rem);line-height:1.1}
-        .dragon-glyph{margin-right:.25rem}
-        .title-subtitle{
-            font-weight:400;font-size:clamp(.9rem,2vw,1.25rem);
-            color:var(--accent);letter-spacing:2px;margin-top:.25rem;
-        }
-        .mission-statement{
-            font-family:'Orbitron',sans-serif;font-size:clamp(1.2rem,3vw,2rem);
-            margin:1.5rem 0 1rem;
-        }
-        .hero-description{max-width:680px;margin:0 auto 2rem;font-size:1rem;color:rgba(230,230,230,.85)}
-        .fork-cta-strip{
-            display:flex;align-items:center;justify-content:center;gap:1rem;
-            background:rgba(0,242,255,.08);border:1px solid rgba(0,242,255,.25);
-            padding:.75rem 1.25rem;border-radius:4px;margin-bottom:2.5rem;
-            flex-wrap:wrap;
-        }
-        .cta-fork{
-            background:var(--accent);color:#000;font-family:'Rajdhani',sans-serif;
-            font-weight:700;padding:.4rem .9rem;border-radius:3px;text-decoration:none;
-            transition:background .2s;
-        }
-        .cta-fork:hover{background:#fff}
-        .power-metrics{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-        .metric{text-align:center}
-        .metric-value{display:block;font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:700;color:var(--accent)}
-        .metric-label{font-size:.75rem;letter-spacing:1px;color:rgba(230,230,230,.6)}
-        .scroll-indicator{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);text-align:center;font-size:.7rem;color:rgba(230,230,230,.5)}
-        .scroll-arrow{
-            width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
-            border-top:6px solid var(--accent);margin:0 auto .25rem;animation:bounce 1.6s infinite;
-        }
-        @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-        @media (prefers-reduced-motion:reduce){
-            .power-indicator,.status-pulse,.scroll-arrow{animation:none}
-        }
-        /* skip-link for a11y */
-        .skip-link{
-            position:absolute;top:-40px;left:0;background:var(--accent);color:#000;
-            padding:.5rem 1rem;z-index:2000;border-radius:0 0 4px 0;
-            font-family:'Rajdhani',sans-serif;font-weight:700;text-decoration:none;
-        }
-        .skip-link:focus{top:0}
-    </style>
-
-    <!-- Async full CSS -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-
+    <link rel="shortcut icon" href="https://www.genspark.ai/api/files/s/lE4g8mEk" type="image/png">
 </head>
 <body>
-    <a class="skip-link" href="#ethos">Skip to content</a>
 
-    <!-- ---------- NAV ---------- -->
-    <nav class="quantum-nav" aria-label="Primary">
+    <nav class="quantum-nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk"
-                     alt="Dragon Tools" class="nav-dragon-logo" width="28" height="28">
+                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools" class="nav-dragon-logo">
                 <span class="brand-text">DRAGON TOOLS</span>
-                <div class="power-indicator" aria-hidden="true"></div>
+                <div class="power-indicator"></div>
             </div>
-
             <div class="nav-links">
                 <a href="#home" class="nav-link active">SYSTEM</a>
                 <a href="#ethos" class="nav-link">ETHOS</a>
-                <a href="infrastructure.html" class="nav-link">INFRASTRUCTURE</a>
+                <a href="infrastructure.html" class="nav-link">INFRASTRUCTURE</a> 
                 <a href="#protocol" class="nav-link">PROTOCOL</a>
             </div>
-
             <div class="system-status">
                 <span class="status-text">ALL SYSTEMS OPERATIONAL</span>
-                <div class="status-pulse" aria-hidden="true"></div>
+                <div class="status-pulse"></div>
             </div>
         </div>
     </nav>
 
-    <!-- ---------- HERO ---------- -->
     <section id="home" class="hero-matrix">
+        <div class="neural-background"></div>
         <div class="hero-container">
+            
             <div class="dragon-core">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk"
-                     alt="Dragon Tools Core" class="core-dragon" width="220" height="220">
-                <div class="energy-rings" aria-hidden="true"></div>
-                <div class="core-icon ankh-icon" aria-hidden="true">☥</div>
-                <div class="core-icon brain-icon" aria-hidden="true">🧠</div>
-                <div class="core-icon horus-icon" aria-hidden="true">👁️</div>
+                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools Core" class="core-dragon">
+                <div class="energy-rings"></div>
+                <div class="core-icon ankh-icon">☥</div> 
+                <div class="core-icon brain-icon">🧠</div>
+                <div class="core-icon horus-icon">👁️</div>
             </div>
 
             <div class="hero-content">
                 <h1 class="quantum-title">
-                    <span class="dragon-glyph" aria-hidden="true">🔱</span>
+                    <span class="dragon-glyph">🔱</span>
                     <span class="title-line">DRAGON TOOLS</span>
                     <div class="title-subtitle">ELITE AI INFRASTRUCTURE</div>
                 </h1>
-
+                
                 <h2 class="mission-statement">
                     ARCHITECT THE FUTURE.<br>
                     MASTER THE AI PARTNERSHIP.
                 </h2>
-
+                
                 <p class="hero-description">
-                    We are constructing the first autonomous AI collective in Trinidad &amp; Tobago.
+                    We are constructing the first autonomous AI collective in Trinidad & Tobago. 
                     Join the architects ready to transcend traditional limitations and build the future infrastructure.
                 </p>
-
+                
                 <div class="fork-cta-strip">
-                    <span class="strip-text">READY TO ACT?</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform"
-                       target="_blank" rel="noopener noreferrer" class="cta-fork">
-                        ACTIVATE FLOW (ZERO FRICTION)
-                    </a>
-                    <span class="strip-text">ZERO FRICTION. INSTANT ARCHITECT.</span>
+                    <div class="container">
+                        <span class="strip-text">READY TO ACT?</span>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform" target="_blank" class="cta-fork">
+                            ACTIVATE FLOW (ZERO FRICTION)
+                        </a>
+                        <span class="strip-text">ZERO FRICTION. INSTANT ARCHITECT.</span>
+                    </div>
                 </div>
 
                 <div class="power-metrics">
                     <div class="metric">
-                        <span class="metric-value" aria-label="Infinite">∞</span>
+                        <span class="metric-value">∞</span>
                         <span class="metric-label">POTENTIAL</span>
                     </div>
                     <div class="metric">
@@ -243,129 +85,180 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="scroll-indicator">
-            <div class="scroll-arrow" aria-hidden="true"></div>
+            <div class="scroll-arrow"></div>
             <span>INITIATE DESCENT</span>
         </div>
     </section>
 
-    <!-- ---------- DIVIDER ---------- -->
     <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2"
-             alt="Dragon divider" width="1200" height="60">
+        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
-    <!-- ---------- ETHOS ---------- -->
     <section id="ethos" class="ethos-chamber">
         <div class="chamber-container">
-            <header class="section-header">
+            <div class="section-header">
                 <h2 class="chamber-title">THE DRAGON ETHOS</h2>
                 <p class="chamber-subtitle">Pioneering the AI Partnership Protocol</p>
-            </header>
-
+            </div>
+            
             <div class="ethos-grid">
+                
                 <div class="ethos-panel primary">
-                    <div class="panel-icon" aria-hidden="true">🧠</div>
+                    <div class="panel-icon">🧠</div>
                     <h3>NEURAL PARTNERSHIP</h3>
-                    <p>We transcend the traditional boundaries of human-AI interaction. Our systems treat artificial intelligence as a <strong>dynamic partner</strong>, not a tool. This symbiotic relationship amplifies creativity, automates complexity, and makes extraordinary efficiency the natural state.</p>
+                    <p>We transcend the traditional boundaries of human-AI interaction. Our systems treat artificial intelligence as a <strong>dynamic partner</strong>, not a tool. This symbiotic relationship amplifies creativity and automates complexity.</p>
                 </div>
-
-                <div class="ethos-panel secondary">
-                    <a href="infrastructure.html" style="text-decoration:none;color:inherit;display:block;">
-                        <div class="panel-icon" aria-hidden="true">⚡</div>
-                        <h3>AUTONOMOUS INFRASTRUCTURE</h3>
-                        <p>Dragon Tools operates beyond conventional employment structures. We are building a <strong>self-sufficient ecosystem</strong> where creators, architects, and visionaries collaborate on AI-powered projects using cutting-edge distributed systems.</p>
-                    </a>
-                </div>
-
+                
+                <a href="infrastructure.html" class="ethos-panel secondary">
+                    <div class="panel-icon">⚡</div>
+                    <h3>AUTONOMOUS INFRASTRUCTURE</h3>
+                    <p>Dragon Tools operates beyond conventional employment. We are building a <strong>self-sufficient ecosystem</strong> where creators collaborate on AI-powered projects using cutting-edge distributed systems.</p>
+                </a> 
+                
                 <div class="ethos-panel tertiary">
-                    <div class="panel-icon" aria-hidden="true">🚀</div>
+                    <div class="panel-icon">🚀</div>
                     <h3>TRINIDAD'S AI SUPREMACY</h3>
-                    <p>This is not about catching up. This is about <strong>leading from the Caribbean</strong>. We are establishing the first elite AI collective in Trinidad &amp; Tobago, proving that innovation knows no geographical boundaries.</p>
+                    <p>This is not about catching up. This is about <strong>leading from the Caribbean</strong>. We are establishing the first elite AI collective in Trinidad & Tobago, proving innovation knows no geographical boundaries.</p>
                 </div>
+                
+                <a href="opportunities.html" class="ethos-panel quaternary">
+                    <div class="panel-icon">🔱</div>
+                    <h3>SOVEREIGN PATHWAYS</h3>
+                    <p>FIND YOUR FUTURE. Master the 14 skill sets that build financial autonomy. This is the path for anyone ready to transcend the factory and co-create with AI.</p>
+                </a>
 
-                <div class="ethos-panel quaternary">
-                    <a href="opportunities.html" style="text-decoration:none;color:inherit;display:block;">
-                        <div class="panel-icon" aria-hidden="true">🔱</div>
-                        <h3>SOVEREIGN PATHWAYS</h3>
-                        <p>This is the architectural map to your economic future. Explore 14 pathways co-created with AI, eliminating dependence on old corporate systems.</p>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ---------- INFRASTRUCTURE ---------- -->
     <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2"
-             alt="Dragon divider" width="1200" height="60">
+        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
     <section id="infrastructure" class="infrastructure-core">
         <div class="core-container">
-            <header class="section-header">
+            <div class="section-header">
                 <h2 class="core-title">SYSTEM ARCHITECTURE</h2>
                 <p class="core-subtitle">Built by Those Who Refused to Wait</p>
-            </header>
-
+            </div>
+            
             <div class="tech-matrix">
-                <!-- six nodes … unchanged copy from your file … -->
-                <!-- (shortened here for brevity – paste your six nodes back in) -->
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">🧠</div> 
+                        <h4>DEEP LEARNING PARTNERSHIP</h4>
+                        <p>Advanced reasoning, code generation, and creative collaboration powered by state-of-the-art **Large Language Models (LLMs)**.</p>
+                        <div class="node-status">ACTIVE</div>
+                    </div>
+                </div>
+                
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">⚙️</div>
+                        <h4>DISTRIBUTED WORKFLOWS</h4>
+                        <p>Version control and automated infrastructure built on platforms like GitHub. Collaborative project development, not corporate dependency.</p>
+                        <div class="node-status">SYNCHRONIZED</div>
+                    </div>
+                </div>
+                
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">💡</div> 
+                        <h4>AI SPARK: SOVEREIGN DEVELOPMENT</h4>
+                        <p>The path to independence. AI is the partner that empowers you to **develop and build your own wealth trajectory**.</p>
+                        <div class="node-status">OPTIMIZED</div>
+                    </div>
+                </div>
+
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">☯️</div> 
+                        <h4>FUTURE-PROOF FLOW</h4>
+                        <p>Embrace the AI future as a partner. This mindset shift is critical to generating **sustained wealth and autonomous systems**.</p>
+                        <div class="node-status">BALANCED</div>
+                    </div>
+                </div>
+
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">👁️</div> 
+                        <h4>VISIONARY ACCELERATION</h4>
+                        <p>Rapidly deploy systems that give you **sovereign control over your time**. Accelerate your vision with AI as your executor.</p>
+                        <div class="node-status">ACCELERATED</div>
+                    </div>
+                </div>
+                
+                <div class="tech-node">
+                    <div class="node-glow"></div>
+                    <div class="node-content">
+                        <div class="node-icon">🌐</div>
+                        <h4>OPEN SOURCE ETHOS</h4>
+                        <p>Knowledge sharing, collective progress, and distributed success across the entire network.</p>
+                        <div class="node-status">DISTRIBUTED</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ---------- PROTOCOL ---------- -->
     <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2"
-             alt="Dragon divider" width="1200" height="60">
+        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
     <section id="protocol" class="access-protocol">
         <div class="protocol-container">
-            <header class="protocol-header">
+            <div class="protocol-header">
                 <h2 class="protocol-title">INITIATE ACCESS PROTOCOL</h2>
-                <p class="protocol-warning">⚠️ RESTRICTED ACCESS – ARCHITECTS ONLY ⚠️</p>
+                <p class="protocol-warning">⚠️ RESTRICTED ACCESS - ARCHITECTS ONLY ⚠️</p>
                 <p class="protocol-description">
-                    The future will not wait for permission. We seek co-architects ready to transcend traditional limitations
-                    and build autonomous AI systems. <strong>This is not employment—this is an opportunity for anyone, regardless of background, to learn, partner with AI, and define their own economic future.</strong>
+                    The future will not wait for permission. We seek co-architects ready to transcend traditional limitations 
+                    and build autonomous AI systems. **This is not employment—this is an opportunity to define your own economic future.**
                 </p>
-            </header>
-
+            </div>
+            
             <div class="requirements-matrix">
                 <div class="requirement-node">
-                    <span class="req-icon" aria-hidden="true">✓</span>
+                    <span class="req-icon">✓</span>
                     <span class="req-text">Hunger to master AI partnership</span>
                 </div>
                 <div class="requirement-node">
-                    <span class="req-icon" aria-hidden="true">✓</span>
-                    <span class="req-text">Willingness to engage in <strong>Transparent, Collaborative Workflows</strong> (e.g., platforms like GitHub)</span>
+                    <span class="req-icon">✓</span>
+                    <span class="req-text">Willingness to engage in **Transparent Workflows**</span>
                 </div>
                 <div class="requirement-node">
-                    <span class="req-icon" aria-hidden="true">✓</span>
+                    <span class="req-icon">✓</span>
                     <span class="req-text">Vision beyond traditional employment</span>
                 </div>
                 <div class="requirement-node">
-                    <span class="req-icon" aria-hidden="true">✓</span>
-                    <span class="req-text">Trinidad &amp; Tobago connection</span>
+                    <span class="req-icon">✓</span>
+                    <span class="req-text">Trinidad & Tobago connection</span>
                 </div>
             </div>
-
+            
             <div class="access-terminal">
                 <div class="terminal-header">
-                    <div class="terminal-controls" aria-hidden="true">
+                    <div class="terminal-controls">
                         <span class="control red"></span>
                         <span class="control yellow"></span>
                         <span class="control green"></span>
                     </div>
                     <span class="terminal-title">DRAGON_TOOLS_ACCESS_PROTOCOL.exe</span>
                 </div>
-
+                
                 <div class="form-quantum-field">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform?embedded=true"
-                            width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0"
-                            title="Access form">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform?embedded=true" 
+                            width="100%" 
+                            height="1200" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
                         LOADING NEURAL INTERFACE...
                     </iframe>
                 </div>
@@ -373,12 +266,10 @@
         </div>
     </section>
 
-    <!-- ---------- FOOTER ---------- -->
     <footer class="quantum-footer">
         <div class="footer-matrix">
             <div class="footer-brand">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk"
-                     alt="Dragon Tools" width="24" height="24">
+                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools">
                 <span>DRAGON TOOLS</span>
             </div>
             <div class="footer-status">
@@ -386,16 +277,14 @@
                 <p class="footer-tagline">Built by those who architect the future.</p>
             </div>
             <div class="footer-coordinates">
-                <span>TRINIDAD &amp; TOBAGO</span>
+                <span>TRINIDAD & TOBAGO</span>
                 <span>10°40'N 61°31'W</span>
             </div>
         </div>
     </footer>
 
-    <!-- Neural canvas -->
-    <canvas id="neural-network" aria-hidden="true"></canvas>
+    <canvas id="neural-network"></canvas>
+    <script src="dragon.js"></script>
 
-    <!-- Scripts -->
-    <script src="dragon.js" defer></script>
 </body>
 </html>
