@@ -1,290 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐲 DRAGON TOOLS - Architect the Future | Elite AI Infrastructure</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://www.genspark.ai/api/files/s/lE4g8mEk" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DRAGON ARCHITECTURE — Elite Design Studio | Trinidad & Tobago</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="https://www.genspark.ai/api/files/s/lE4g8mEk" type="image/png">
 </head>
 <body>
 
-    <nav class="quantum-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools" class="nav-dragon-logo">
-                <span class="brand-text">DRAGON TOOLS</span>
-                <div class="power-indicator"></div>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">SYSTEM</a>
-                <a href="#ethos" class="nav-link">ETHOS</a>
-                <a href="infrastructure.html" class="nav-link">INFRASTRUCTURE</a> 
-                <a href="#protocol" class="nav-link">PROTOCOL</a>
-            </div>
-            <div class="system-status">
-                <span class="status-text">ALL SYSTEMS OPERATIONAL</span>
-                <div class="status-pulse"></div>
-            </div>
-        </div>
-    </nav>
+  <canvas id="neural"></canvas>
 
-    <section id="home" class="hero-matrix">
-        <div class="neural-background"></div>
-        <div class="hero-container">
-            
-            <div class="dragon-core">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools Core" class="core-dragon">
-                <div class="energy-rings"></div>
-                <div class="core-icon ankh-icon">☥</div> 
-                <div class="core-icon brain-icon">🧠</div>
-                <div class="core-icon horus-icon">👁️</div>
-            </div>
+  <!-- ======== QUANTUM NAV WITH TOGGLE ======== -->
+  <nav class="quantum-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" class="nav-dragon-logo" alt="Dragon Architecture">
+        <div class="brand-text">DRAGON ARCHITECTURE</div>
+      </div>
 
-            <div class="hero-content">
-                <h1 class="quantum-title">
-                    <span class="dragon-glyph">🔱</span>
-                    <span class="title-line">DRAGON TOOLS</span>
-                    <div class="title-subtitle">ELITE AI INFRASTRUCTURE</div>
-                </h1>
-                
-                <h2 class="mission-statement">
-                    ARCHITECT THE FUTURE.<br>
-                    MASTER THE AI PARTNERSHIP.
-                </h2>
-                
-                <p class="hero-description">
-                    We are constructing the first autonomous AI collective in Trinidad & Tobago. 
-                    Join the architects ready to transcend traditional limitations and build the future infrastructure.
-                </p>
-                
-                <div class="fork-cta-strip">
-                    <div class="container">
-                        <span class="strip-text">READY TO ACT?</span>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform" target="_blank" class="cta-fork">
-                            ACTIVATE FLOW (ZERO FRICTION)
-                        </a>
-                        <span class="strip-text">ZERO FRICTION. INSTANT ARCHITECT.</span>
-                    </div>
-                </div>
+      <label for="nav-toggle" class="trident-toggle">☰</label>
+      <input type="checkbox" id="nav-toggle">
 
-                <div class="power-metrics">
-                    <div class="metric">
-                        <span class="metric-value">∞</span>
-                        <span class="metric-label">POTENTIAL</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">24/7</span>
-                        <span class="metric-label">ACTIVE</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">100%</span>
-                        <span class="metric-label">AUTONOMOUS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-            <span>INITIATE DESCENT</span>
-        </div>
-    </section>
-
-    <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
+      <div class="nav-links">
+        <a href="#home" class="nav-link active">HOME</a>
+        <a href="#services" class="nav-link">SERVICES</a>
+        <a href="#projects" class="nav-link">PROJECTS</a>
+        <a href="#about" class="nav-link">ABOUT</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </div>
     </div>
+  </nav>
 
-    <section id="ethos" class="ethos-chamber">
-        <div class="chamber-container">
-            <div class="section-header">
-                <h2 class="chamber-title">THE DRAGON ETHOS</h2>
-                <p class="chamber-subtitle">Pioneering the AI Partnership Protocol</p>
-            </div>
-            
-            <div class="ethos-grid">
-                
-                <div class="ethos-panel primary">
-                    <div class="panel-icon">🧠</div>
-                    <h3>NEURAL PARTNERSHIP</h3>
-                    <p>We transcend the traditional boundaries of human-AI interaction. Our systems treat artificial intelligence as a <strong>dynamic partner</strong>, not a tool. This symbiotic relationship amplifies creativity and automates complexity.</p>
-                </div>
-                
-                <a href="infrastructure.html" class="ethos-panel secondary">
-                    <div class="panel-icon">⚡</div>
-                    <h3>AUTONOMOUS INFRASTRUCTURE</h3>
-                    <p>Dragon Tools operates beyond conventional employment. We are building a <strong>self-sufficient ecosystem</strong> where creators collaborate on AI-powered projects using cutting-edge distributed systems.</p>
-                </a> 
-                
-                <div class="ethos-panel tertiary">
-                    <div class="panel-icon">🚀</div>
-                    <h3>TRINIDAD'S AI SUPREMACY</h3>
-                    <p>This is not about catching up. This is about <strong>leading from the Caribbean</strong>. We are establishing the first elite AI collective in Trinidad & Tobago, proving innovation knows no geographical boundaries.</p>
-                </div>
-                
-                <a href="opportunities.html" class="ethos-panel quaternary">
-                    <div class="panel-icon">🔱</div>
-                    <h3>SOVEREIGN PATHWAYS</h3>
-                    <p>FIND YOUR FUTURE. Master the 14 skill sets that build financial autonomy. This is the path for anyone ready to transcend the factory and co-create with AI.</p>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
+  <!-- ======== HERO ======== -->
+  <section id="home" class="hero">
+    <div class="dragon-core">
+      <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" class="core-img" alt="Dragon Core">
+      <div class="core-icon ankh">⚱</div>
+      <div class="core-icon brain">🧠</div>
+      <div class="core-icon horus">👁</div>
     </div>
+    <h1 class="title">DRAGON ARCHITECTURE</h1>
+    <div class="subtitle">Elite Design Studio</div>
+    <div class="mission">ARCHITECT THE FUTURE — MASTER SUSTAINABLE DESIGN</div>
+    <a href="#contact" class="cta-btn">Start Your Project</a>
+  </section>
 
-    <section id="infrastructure" class="infrastructure-core">
-        <div class="core-container">
-            <div class="section-header">
-                <h2 class="core-title">SYSTEM ARCHITECTURE</h2>
-                <p class="core-subtitle">Built by Those Who Refused to Wait</p>
-            </div>
-            
-            <div class="tech-matrix">
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">🧠</div> 
-                        <h4>DEEP LEARNING PARTNERSHIP</h4>
-                        <p>Advanced reasoning, code generation, and creative collaboration powered by state-of-the-art **Large Language Models (LLMs)**.</p>
-                        <div class="node-status">ACTIVE</div>
-                    </div>
-                </div>
-                
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">⚙️</div>
-                        <h4>DISTRIBUTED WORKFLOWS</h4>
-                        <p>Version control and automated infrastructure built on platforms like GitHub. Collaborative project development, not corporate dependency.</p>
-                        <div class="node-status">SYNCHRONIZED</div>
-                    </div>
-                </div>
-                
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">💡</div> 
-                        <h4>AI SPARK: SOVEREIGN DEVELOPMENT</h4>
-                        <p>The path to independence. AI is the partner that empowers you to **develop and build your own wealth trajectory**.</p>
-                        <div class="node-status">OPTIMIZED</div>
-                    </div>
-                </div>
-
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">☯️</div> 
-                        <h4>FUTURE-PROOF FLOW</h4>
-                        <p>Embrace the AI future as a partner. This mindset shift is critical to generating **sustained wealth and autonomous systems**.</p>
-                        <div class="node-status">BALANCED</div>
-                    </div>
-                </div>
-
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">👁️</div> 
-                        <h4>VISIONARY ACCELERATION</h4>
-                        <p>Rapidly deploy systems that give you **sovereign control over your time**. Accelerate your vision with AI as your executor.</p>
-                        <div class="node-status">ACCELERATED</div>
-                    </div>
-                </div>
-                
-                <div class="tech-node">
-                    <div class="node-glow"></div>
-                    <div class="node-content">
-                        <div class="node-icon">🌐</div>
-                        <h4>OPEN SOURCE ETHOS</h4>
-                        <p>Knowledge sharing, collective progress, and distributed success across the entire network.</p>
-                        <div class="node-status">DISTRIBUTED</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="dragon-divider">
-        <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
+  <!-- ======== SERVICES – PERFECT SQUARES ======== -->
+  <section id="services" class="section">
+    <h2 class="section-title">ARCHITECTURAL SERVICES</h2>
+    <div class="grid-square">
+      <!-- Repeat this block for all 8 services -->
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--gold);">🏛️</div>
+        <h4>RESIDENTIAL DESIGN</h4>
+        <p>Luxury homes and sustainable living spaces with modern aesthetics and functional excellence.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--cb);">🏢</div>
+        <h4>COMMERCIAL SPACES</h4>
+        <p>Dynamic office buildings, retail environments, and mixed-use developments.</p>
+      </div>
+      <!-- ... add the other 6 exactly the same way ... -->
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--ng);">🌱</div>
+        <h4>SUSTAINABLE DESIGN</h4>
+        <p>Eco-friendly architecture using green technologies and energy-efficient systems.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--do);">📐</div>
+        <h4>MASTER PLANNING</h4>
+        <p>Comprehensive urban development strategies creating vibrant communities.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--gold);">🎨</div>
+        <h4>INTERIOR DESIGN</h4>
+        <p>Sophisticated interior environments maximizing comfort and aesthetic appeal.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--cb);">🔧</div>
+        <h4>RENOVATION</h4>
+        <p>Transformative renovation projects preserving architectural heritage.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--ng);">💡</div>
+        <h4>CONSULTING</h4>
+        <p>Expert architectural consultation and design optimization strategies.</p>
+      </div>
+      <div class="square-card">
+        <div class="node-icon" style="color: var(--do);">🖥️</div>
+        <h4>3D VISUALIZATION</h4>
+        <p>Cutting-edge 3D rendering and virtual reality architectural experiences.</p>
+      </div>
     </div>
+  </section>
 
-    <section id="protocol" class="access-protocol">
-        <div class="protocol-container">
-            <div class="protocol-header">
-                <h2 class="protocol-title">INITIATE ACCESS PROTOCOL</h2>
-                <p class="protocol-warning">⚠️ RESTRICTED ACCESS - ARCHITECTS ONLY ⚠️</p>
-                <p class="protocol-description">
-                    The future will not wait for permission. We seek co-architects ready to transcend traditional limitations 
-                    and build autonomous AI systems. **This is not employment—this is an opportunity to define your own economic future.**
-                </p>
-            </div>
-            
-            <div class="requirements-matrix">
-                <div class="requirement-node">
-                    <span class="req-icon">✓</span>
-                    <span class="req-text">Hunger to master AI partnership</span>
-                </div>
-                <div class="requirement-node">
-                    <span class="req-icon">✓</span>
-                    <span class="req-text">Willingness to engage in **Transparent Workflows**</span>
-                </div>
-                <div class="requirement-node">
-                    <span class="req-icon">✓</span>
-                    <span class="req-text">Vision beyond traditional employment</span>
-                </div>
-                <div class="requirement-node">
-                    <span class="req-icon">✓</span>
-                    <span class="req-text">Trinidad & Tobago connection</span>
-                </div>
-            </div>
-            
-            <div class="access-terminal">
-                <div class="terminal-header">
-                    <div class="terminal-controls">
-                        <span class="control red"></span>
-                        <span class="control yellow"></span>
-                        <span class="control green"></span>
-                    </div>
-                    <span class="terminal-title">DRAGON_TOOLS_ACCESS_PROTOCOL.exe</span>
-                </div>
-                
-                <div class="form-quantum-field">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-j3gwAL8RTpJkpeALazv47_e-NjnVpYExCmKRrOJBIJRgsw/viewform?embedded=true" 
-                            width="100%" 
-                            height="1200" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0">
-                        LOADING NEURAL INTERFACE...
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ======== PROJECTS & ABOUT – ALSO SQUARE ======== -->
+  <section id="projects" class="section"><h2 class="section-title">SIGNATURE PROJECTS</h2><div class="grid-square">
+    <div class="square-card"><h3>CARIBBEAN PEARL RESORT</h3><p>A stunning luxury resort seamlessly integrated with Trinidad's natural coastline...</p></div>
+    <div class="square-card"><h3>PORT OF SPAIN FINANCIAL TOWER</h3><p>A 35-story mixed-use tower redefining the city skyline...</p></div>
+    <div class="square-card"><h3>SUSTAINABLE HOUSING COMPLEX</h3><p>An award-winning affordable housing project...</p></div>
+  </div></section>
 
-    <footer class="quantum-footer">
-        <div class="footer-matrix">
-            <div class="footer-brand">
-                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools">
-                <span>DRAGON TOOLS</span>
-            </div>
-            <div class="footer-status">
-                <p>© 2025 Dragon Tools Collective. All systems operational.</p>
-                <p class="footer-tagline">Built by those who architect the future.</p>
-            </div>
-            <div class="footer-coordinates">
-                <span>TRINIDAD & TOBAGO</span>
-                <span>10°40'N 61°31'W</span>
-            </div>
-        </div>
-    </footer>
+  <section id="about" class="section"><h2 class="section-title">THE DRAGON LEGACY</h2><div class="grid-square">
+    <div class="square-card"><h3>OUR PHILOSOPHY</h3><p>Architecture is the intersection of art, science, and human experience...</p></div>
+    <div class="square-card"><h3>INNOVATION MEETS TRADITION</h3><p>Our designs honor Caribbean heritage while embracing cutting-edge tech...</p></div>
+    <div class="square-card"><h3>AWARD-WINNING EXCELLENCE</h3><p>Internationally recognized for innovative tropical architecture...</p></div>
+  </div></section>
 
-    <canvas id="neural-network"></canvas>
-    <script src="dragon.js"></script>
+  <!-- ======== CONTACT ======== -->
+  <section id="contact" class="section">
+    <h2 class="section-title">CONNECT WITH US</h2>
+    <div class="contact-container">
+      <div class="contact-info">/* same as before */</div>
+      <div class="contact-form">/* same as before */</div>
+    </div>
+  </section>
 
+  <script src="script.js"></script>
 </body>
 </html>
