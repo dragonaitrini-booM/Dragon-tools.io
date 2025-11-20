@@ -1,3 +1,5 @@
+/* Dragon Tools – CSS CONFIGURATION COMPLETE */
+
 /* QUANTUM VARIABLES */
 :root {
     --neural-dark: #0a0a0d;
@@ -83,7 +85,16 @@ body {
     height: 50px;
     border-radius: 10px;
     box-shadow: var(--shadow-cyber);
-    animation: dragon-pulse 2s ease-in-out infinite alternate;
+    /* The static infinite animation is removed/overridden by the JS heartbeat */
+    /* animation: dragon-pulse 2s ease-in-out infinite alternate; */ 
+    transition: all 0.2s ease-out; /* Added for the smooth pulse transition */
+}
+
+/* Global Logo Pulse Animation (used by JS Heartbeat Hook) */
+@keyframes heart-pulse {
+    0%   { transform: scale(1); box-shadow: 0 0 15px var(--cyber-blue); }
+    50%  { transform: scale(1.1); box-shadow: 0 0 30px var(--dragon-orange), 0 0 50px rgba(255, 69, 0, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 15px var(--cyber-blue); }
 }
 
 @keyframes dragon-pulse {
@@ -294,6 +305,73 @@ body {
     line-height: 1.8;
     color: rgba(248, 249, 250, 0.9);
 }
+
+/* --- ONE-CLICK FORK CTA STRIP STYLES (Hook 2) --- */
+.fork-cta-strip {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255, 69, 0, 0.05); /* Faint orange background */
+    border-top: 1px solid var(--dragon-orange);
+    border-bottom: 1px solid var(--dragon-orange);
+    margin: 50px 0;
+}
+
+.fork-cta-strip .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.strip-text {
+    font-family: var(--font-cyber);
+    font-size: 1.1em;
+    color: var(--cyber-blue);
+    letter-spacing: 2px;
+}
+
+.cta-fork {
+    display: inline-block;
+    background: var(--dragon-orange);
+    color: var(--quantum-black);
+    padding: 15px 40px;
+    font-family: var(--font-quantum);
+    font-size: 1.2em;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(255,69,0,0.6);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: urgent-pulse 1.8s infinite;
+    text-transform: uppercase;
+}
+
+.cta-fork:hover {
+    background: #ff6622;
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(255,69,0,0.8);
+}
+
+.cta-fork.copied {
+    background: var(--neon-green);
+    color: var(--quantum-black);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    animation: none; /* Stop the urgent pulse after success */
+}
+
+@keyframes urgent-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(255,69,0,0.6); }
+    50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(255,69,0,0.9); }
+}
+
+/* --- END HOOK 2 STYLES --- */
+
 
 .power-metrics {
     display: flex;
@@ -806,12 +884,22 @@ body {
     .hero-container {
         padding: 40px 20px;
     }
+
+    /* Hook 2 Responsive Fix */
+    .fork-cta-strip .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .cta-fork {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
 }
 
 /* --- NEW INFRASTRUCTURE DETAIL PAGE STYLES --- */
 .infrastructure-page {
     /* Ensures the fixed navbar doesn't cover content */
-    padding-top: 100px; 
+    padding-top: 100px;
 }
 
 .detail-matrix {
@@ -911,6 +999,7 @@ body {
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
+    margin-bottom: 60px; /* Added margin for separation */
 }
 
 .directive-title {
@@ -927,6 +1016,38 @@ body {
     color: var(--ghost-white);
 }
 
+.final-call {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.final-call p {
+    font-size: 1.4em;
+    font-family: var(--font-cyber);
+    margin-bottom: 30px;
+}
+
+.cta-final {
+    display: inline-block;
+    background: var(--cyber-blue);
+    color: var(--quantum-black);
+    padding: 20px 60px;
+    font-family: var(--font-quantum);
+    font-size: 1.6em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-final:hover {
+    background: #4dffff;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
+}
+
 /* Responsive adjustment for the new page on smaller screens */
 @media (max-width: 768px) {
     .core-title-page {
@@ -937,5 +1058,9 @@ body {
     }
     .architecture-grid {
         grid-template-columns: 1fr;
+    }
+    .cta-final {
+        font-size: 1.2em;
+        padding: 15px 30px;
     }
 }
