@@ -1,0 +1,41 @@
+Name: Validate Article Frontmatter
+
+on:
+  push:
+    paths: ['articles/**/*.md']
+  pull_request:
+    paths: ['articles/**/*.md']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate YAML Frontmatter
+        uses: dorny/frontmatter-action@v1
+        with:
+          schema: |
+            type: object
+            required:
+              - title
+              - slug
+              - author
+              - date
+              - category
+              - pillar_icon
+              - pillar_number
+              - tags
+              - summary
+            properties:
+              title: { type: string, minLength: 10 }
+              slug: { type: string, pattern: "^[a-z0-9-]+$", maxLength: 60 }
+              author: { type: string }
+              date: { type: string, format: date }
+              category: { type: string, const: "Sovereign Pathways" }
+              pillar_icon: { type: string }
+              pillar_number: { type: integer, minimum: 1, maximum: 14 }
+              tags: { type: array, minItems: 2, items: { type: string } }
+              summary: { type: string, minLength: 50 }
+              thumbnail: { type: string, pattern: "^/images/" }
+              draft: { type: boolean }
