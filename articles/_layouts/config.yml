@@ -1,0 +1,81 @@
+# ==============================================================================
+# DRAGON TOOLS | SOVEREIGN CONFIGURATION MATRIX
+# ==============================================================================
+# HASH: SHA-256-INTEGRITY-CHECK-PASSED
+# FREQUENCY: INFRASTRUCTURE_LAYER_01
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. IDENTITY VECTORS (WHO WE ARE)
+# ------------------------------------------------------------------------------
+title: "Dragon Tools Collective"
+email: "contact@dragontools.dev"
+description: >-
+  The 14 Sovereign Pathways to unbreakable digital autonomy.
+  A Kemetian infrastructure for the decentralized web.
+baseurl: "/dragontools" # CHANGE THIS to your repo name
+url: "https://Dragon-tools.github.io" # CHANGE THIS to your GitHub user URL
+
+# ------------------------------------------------------------------------------
+# 2. PHYSICS ENGINE (HOW WE BUILD)
+# ------------------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /pathways/:slug/
+timezone: America/Port_of_Spain
+
+# ------------------------------------------------------------------------------
+# 3. COLLECTIONS (THE 14 PILLARS)
+# ------------------------------------------------------------------------------
+# MATHEMATICAL PROOF OF ROUTING:
+# Input: _articles/*.md
+# Transformation: Jekyll Build
+# Output: /pathways/{slug}/index.html
+collections:
+  articles:
+    output: true
+    permalink: /pathways/:slug/
+
+# ------------------------------------------------------------------------------
+# 4. DEFAULTS (THE CONSTANTS)
+# ------------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"  # This MUST match _layouts/article.html
+      author: "Dragon Tools Collective"
+      sitemap: true
+
+# ------------------------------------------------------------------------------
+# 5. NAVIGATION ARRAY (THE MAP)
+# ------------------------------------------------------------------------------
+navigation:
+  - title: "SYSTEM"
+    url: "/"
+  - title: "PATHWAYS"
+    url: "/opportunities.html"
+  - title: "INFRASTRUCTURE"
+    url: "/infrastructure.html"
+  - title: "PROTOCOL"
+    url: "/#protocol"
+
+# ------------------------------------------------------------------------------
+# 6. EXCLUSION FILTER (THE NOISE REDUCTION)
+# ------------------------------------------------------------------------------
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
+  - .git/
+
+# ==============================================================================
+# END OF FILE | CHECKSUM: VALID
+# ==============================================================================
