@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- NAVIGATION MATRIX -->
     <nav class="quantum-nav">
         <div class="nav-container">
             <div class="nav-brand">
@@ -21,7 +20,7 @@
             <div class="nav-links">
                 <a href="#home" class="nav-link active">SYSTEM</a>
                 <a href="#ethos" class="nav-link">ETHOS</a>
-                <a href="#infrastructure" class="nav-link">INFRASTRUCTURE</a>
+                <a href="infrastructure.html" class="nav-link">INFRASTRUCTURE</a> 
                 <a href="#protocol" class="nav-link">PROTOCOL</a>
             </div>
             <div class="system-status">
@@ -31,7 +30,6 @@
         </div>
     </nav>
 
-    <!-- HERO QUANTUM FIELD -->
     <section id="home" class="hero-matrix">
         <div class="neural-background"></div>
         <div class="hero-container">
@@ -53,6 +51,17 @@
                     We are constructing the first autonomous AI collective in Trinidad & Tobago. 
                     Join the architects ready to transcend traditional limitations and build the future infrastructure.
                 </p>
+                
+                <div class="fork-cta-strip">
+                    <div class="container">
+                        <span class="strip-text">READY TO ACT?</span>
+                        <button id="fork-clone-btn" class="cta-fork">
+                            STEAL THIS REPO IN 3s (Click to Copy Command)
+                        </button>
+                        <span class="strip-text">ZERO FRICTION. INSTANT ARCHITECT.</span>
+                    </div>
+                </div>
+
                 <div class="power-metrics">
                     <div class="metric">
                         <span class="metric-value">∞</span>
@@ -75,12 +84,10 @@
         </div>
     </section>
 
-    <!-- DRAGON DIVIDER -->
     <div class="dragon-divider">
         <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
-    <!-- ETHOS CHAMBER -->
     <section id="ethos" class="ethos-chamber">
         <div class="chamber-container">
             <div class="section-header">
@@ -110,12 +117,10 @@
         </div>
     </section>
 
-    <!-- DRAGON DIVIDER -->
     <div class="dragon-divider">
         <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
-    <!-- INFRASTRUCTURE CORE -->
     <section id="infrastructure" class="infrastructure-core">
         <div class="core-container">
             <div class="section-header">
@@ -167,12 +172,10 @@
         </div>
     </section>
 
-    <!-- DRAGON DIVIDER -->
     <div class="dragon-divider">
         <img src="https://www.genspark.ai/api/files/s/smVXusf2" alt="Dragon Divider">
     </div>
 
-    <!-- ACCESS PROTOCOL -->
     <section id="protocol" class="access-protocol">
         <div class="protocol-container">
             <div class="protocol-header">
@@ -227,7 +230,6 @@
         </div>
     </section>
 
-    <!-- QUANTUM FOOTER -->
     <footer class="quantum-footer">
         <div class="footer-matrix">
             <div class="footer-brand">
@@ -245,99 +247,9 @@
         </div>
     </footer>
 
-    <!-- BACKGROUND EFFECTS -->
     <canvas id="neural-network"></canvas>
     
-    <script>
-        // Neural Network Animation
-        const canvas = document.getElementById('neural-network');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 2,
-                vy: (Math.random() - 0.5) * 2,
-                size: Math.random() * 2 + 1
-            });
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = 'rgba(0, 229, 255, 0.1)';
-            ctx.fillStyle = 'rgba(0, 229, 255, 0.3)';
-            ctx.lineWidth = 1;
-
-            particles.forEach((particle, i) => {
-                particle.x += particle.vx;
-                particle.y += particle.vy;
-
-                if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-                if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                particles.forEach((otherParticle, j) => {
-                    if (i !== j) {
-                        const dx = particle.x - otherParticle.x;
-                        const dy = particle.y - otherParticle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-
-                        if (distance < 100) {
-                            ctx.beginPath();
-                            ctx.moveTo(particle.x, particle.y);
-                            ctx.lineTo(otherParticle.x, otherParticle.y);
-                            ctx.stroke();
-                        }
-                    }
-                });
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Navigation active state
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="dragon.js"></script>
 
 </body>
 </html>
