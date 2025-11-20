@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Dragon Tools Collective</title>
+    
+    {% seo %}
+    
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.thumbnail }}">
+</head>
+<body class="infrastructure-page">
+
+    <nav class="quantum-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="{{ '/' | relative_url }}">
+                    <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools" class="nav-dragon-logo">
+                </a>
+                <a href="{{ '/' | relative_url }}" class="brand-text">DRAGON TOOLS</a>
+                <div class="power-indicator"></div>
+            </div>
+            <div class="nav-links">
+                {% for item in site.navigation %}
+                    <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url contains item.url %}active{% endif %}">{{ item.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+
+    <section class="article-hero">
+        <div class="container">
+            <div class="article-header">
+                <span class="pillar-icon-large">{{ page.pillar_icon }}</span>
+                <h1 class="article-title">{{ page.title }}</h1>
+                <p class="symbolic-name">Pillar {{ page.pillar_number }}: {{ page.symbolic_name }}</p>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Sacred Number</span>
+                        <span class="meta-value sacred-number">{{ page.sacred_number }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Cosmic Law</span>
+                        <span class="meta-value">{{ page.cosmic_correspondence }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Difficulty</span>
+                        <span class="meta-value">{{ page.difficulty }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Sacred Color</span>
+                        <span class="meta-value" style="color: {{ page.sacred_color | split: ' and ' | first }};">{{ page.sacred_color }}</span>
+                    </div>
+                </div>
+                
+                <p class="article-summary">{{ page.summary }}</p>
+
+            </div>
+        </div>
+    </section>
+
+    <article class="article-content container">
+        {{ content }}
+        
+        <div class="mantra-box">
+            <div class="mantra-label">ACTIVATION MANTRA (HEKA)</div>
+            <div class="mantra-text">{{ page.mantra }}</div>
+        </div>
+    </article>
+
+    <footer class="quantum-footer">
+        <div class="footer-matrix">
+            <div class="footer-brand">
+                <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" alt="Dragon Tools">
+                <span>DRAGON TOOLS</span>
+            </div>
+            <div class="footer-status">
+                <p>© {{ site.footer.year }} {{ site.author }}. All systems sovereign.</p>
+                <p class="footer-tagline">{{ site.footer.tagline }}</p>
+            </div>
+            <div class="footer-coordinates">
+                <span>{{ site.footer.location }}</span>
+                <span>{{ site.footer.coordinates }}</span>
+            </div>
+        </div>
+    </footer>
+
+    <canvas id="neural-network"></canvas>
+    <script src="{{ '/dragon.js' | relative_url }}"></script>
+</body>
+</html>
