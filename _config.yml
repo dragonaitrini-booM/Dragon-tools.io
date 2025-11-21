@@ -1,0 +1,4 @@
+# Dragon Tools Static Site Config
+theme: jekyll-theme-cayman # Fallback/ignored as we use custom HTML/CSS, but signals Jekyll.
+title: Dragon Tools
+description: Sovereign AI Collective
