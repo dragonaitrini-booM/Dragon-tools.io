@@ -500,6 +500,24 @@ margin-bottom: 20px;
 
 text-shadow: var(--shadow-cyber);
 
+color: var(--cyber-blue); /* Ensuring color is set */
+
+}
+
+.core-subtitle-page {
+
+font-family: var(--font-cyber);
+
+font-size: 1.5em;
+
+color: var(--dragon-orange);
+
+letter-spacing: 4px;
+
+margin-bottom: 40px;
+
+text-align: center;
+
 }
 
 
@@ -807,6 +825,82 @@ font-size: 1.4em;
 color: var(--dragon-orange);
 
 letter-spacing: 3px;
+
+}
+
+/* Architecture Grid and Modules */
+
+.architecture-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+gap: 40px;
+
+}
+
+.architecture-module {
+
+position: relative;
+
+background: rgba(26, 26, 32, 0.6);
+
+border-radius: 15px;
+
+overflow: hidden;
+
+transition: all 0.3s ease;
+
+padding: 40px;
+
+border: 1px solid transparent;
+
+}
+
+.architecture-module:hover {
+
+transform: scale(1.05);
+
+border-color: var(--cyber-blue);
+
+box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+
+}
+
+.module-icon {
+
+font-size: 3em;
+
+margin-bottom: 20px;
+
+display: block;
+
+}
+
+.architecture-module h3 {
+
+font-family: var(--font-quantum);
+
+font-size: 1.5em;
+
+color: var(--cyber-blue);
+
+margin-bottom: 15px;
+
+letter-spacing: 2px;
+
+}
+
+.architecture-module p {
+
+font-size: 1em;
+
+line-height: 1.7;
+
+color: rgba(248, 249, 250, 0.8);
+
+margin-bottom: 0;
 
 }
 
