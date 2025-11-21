@@ -1,123 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DRAGON ARCHITECTURE — Elite Design Studio | Trinidad & Tobago</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="https://www.genspark.ai/api/files/s/lE4g8mEk" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Business Solutions</title>
+    <meta name="description" content="Modern business solutions for growth and success. Expert consulting, digital services, and strategic guidance.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>BusinessPro</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+    </header>
 
-  <canvas id="neural"></canvas>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Professional Business Solutions</h2>
+                    <p>We help businesses grow with strategic consulting, digital transformation, and innovative solutions tailored to your needs.</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </section>
 
-  <!-- ======== QUANTUM NAV WITH TOGGLE ======== -->
-  <nav class="quantum-nav">
-    <div class="nav-container">
-      <div class="nav-brand">
-        <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" class="nav-dragon-logo" alt="Dragon Architecture">
-        <div class="brand-text">DRAGON ARCHITECTURE</div>
-      </div>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Business Consulting</h3>
+                        <p>Strategic guidance to optimize your operations and drive growth through data-driven insights.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Digital Solutions</h3>
+                        <p>Modern technology implementations to streamline processes and enhance productivity.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎯</div>
+                        <h3>Marketing Strategy</h3>
+                        <p>Comprehensive marketing plans that reach your target audience and convert leads.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Growth Planning</h3>
+                        <p>Scalable strategies to expand your business while maintaining quality and efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <label for="nav-toggle" class="trident-toggle">☰</label>
-      <input type="checkbox" id="nav-toggle">
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Our Company</h2>
+                        <p>With over 10 years of experience in business consulting and digital transformation, we've helped hundreds of companies achieve their goals and exceed expectations.</p>
+                        <p>Our team combines industry expertise with innovative approaches to deliver results that matter to your bottom line.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="nav-links">
-        <a href="#home" class="nav-link active">HOME</a>
-        <a href="#services" class="nav-link">SERVICES</a>
-        <a href="#projects" class="nav-link">PROJECTS</a>
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
-      </div>
-    </div>
-  </nav>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p>hello@businesspro.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Address:</strong>
+                            <p>123 Business Street<br>Suite 100<br>City, State 12345</p>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- ======== HERO ======== -->
-  <section id="home" class="hero">
-    <div class="dragon-core">
-      <img src="https://www.genspark.ai/api/files/s/lE4g8mEk" class="core-img" alt="Dragon Core">
-      <div class="core-icon ankh">⚱</div>
-      <div class="core-icon brain">🧠</div>
-      <div class="core-icon horus">👁</div>
-    </div>
-    <h1 class="title">DRAGON ARCHITECTURE</h1>
-    <div class="subtitle">Elite Design Studio</div>
-    <div class="mission">ARCHITECT THE FUTURE — MASTER SUSTAINABLE DESIGN</div>
-    <a href="#contact" class="cta-btn">Start Your Project</a>
-  </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BusinessPro. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <!-- ======== SERVICES – PERFECT SQUARES ======== -->
-  <section id="services" class="section">
-    <h2 class="section-title">ARCHITECTURAL SERVICES</h2>
-    <div class="grid-square">
-      <!-- Repeat this block for all 8 services -->
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--gold);">🏛️</div>
-        <h4>RESIDENTIAL DESIGN</h4>
-        <p>Luxury homes and sustainable living spaces with modern aesthetics and functional excellence.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--cb);">🏢</div>
-        <h4>COMMERCIAL SPACES</h4>
-        <p>Dynamic office buildings, retail environments, and mixed-use developments.</p>
-      </div>
-      <!-- ... add the other 6 exactly the same way ... -->
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--ng);">🌱</div>
-        <h4>SUSTAINABLE DESIGN</h4>
-        <p>Eco-friendly architecture using green technologies and energy-efficient systems.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--do);">📐</div>
-        <h4>MASTER PLANNING</h4>
-        <p>Comprehensive urban development strategies creating vibrant communities.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--gold);">🎨</div>
-        <h4>INTERIOR DESIGN</h4>
-        <p>Sophisticated interior environments maximizing comfort and aesthetic appeal.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--cb);">🔧</div>
-        <h4>RENOVATION</h4>
-        <p>Transformative renovation projects preserving architectural heritage.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--ng);">💡</div>
-        <h4>CONSULTING</h4>
-        <p>Expert architectural consultation and design optimization strategies.</p>
-      </div>
-      <div class="square-card">
-        <div class="node-icon" style="color: var(--do);">🖥️</div>
-        <h4>3D VISUALIZATION</h4>
-        <p>Cutting-edge 3D rendering and virtual reality architectural experiences.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== PROJECTS & ABOUT – ALSO SQUARE ======== -->
-  <section id="projects" class="section"><h2 class="section-title">SIGNATURE PROJECTS</h2><div class="grid-square">
-    <div class="square-card"><h3>CARIBBEAN PEARL RESORT</h3><p>A stunning luxury resort seamlessly integrated with Trinidad's natural coastline...</p></div>
-    <div class="square-card"><h3>PORT OF SPAIN FINANCIAL TOWER</h3><p>A 35-story mixed-use tower redefining the city skyline...</p></div>
-    <div class="square-card"><h3>SUSTAINABLE HOUSING COMPLEX</h3><p>An award-winning affordable housing project...</p></div>
-  </div></section>
-
-  <section id="about" class="section"><h2 class="section-title">THE DRAGON LEGACY</h2><div class="grid-square">
-    <div class="square-card"><h3>OUR PHILOSOPHY</h3><p>Architecture is the intersection of art, science, and human experience...</p></div>
-    <div class="square-card"><h3>INNOVATION MEETS TRADITION</h3><p>Our designs honor Caribbean heritage while embracing cutting-edge tech...</p></div>
-    <div class="square-card"><h3>AWARD-WINNING EXCELLENCE</h3><p>Internationally recognized for innovative tropical architecture...</p></div>
-  </div></section>
-
-  <!-- ======== CONTACT ======== -->
-  <section id="contact" class="section">
-    <h2 class="section-title">CONNECT WITH US</h2>
-    <div class="contact-container">
-      <div class="contact-info">/* same as before */</div>
-      <div class="contact-form">/* same as before */</div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
