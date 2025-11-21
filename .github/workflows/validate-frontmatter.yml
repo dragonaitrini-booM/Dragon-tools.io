@@ -1,4 +1,4 @@
-Name: Validate Article Frontmatter
+name: Validate Article Frontmatter
 
 on:
   push:
@@ -39,3 +39,8 @@ jobs:
               summary: { type: string, minLength: 50 }
               thumbnail: { type: string, pattern: "^/images/" }
               draft: { type: boolean }
+              sacred_number: { type: integer }
+              mantra: { type: string }
+              symbolic_name: { type: string }
+              cosmic_correspondence: { type: string }
+              sacred_color: { type: string }
