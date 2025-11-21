@@ -828,80 +828,101 @@ letter-spacing: 3px;
 
 }
 
-/* Architecture Grid and Modules */
+/* ========================================= */
+/* SOVEREIGN PATHWAYS – COMPACT DASHBOARD    */
+/* ========================================= */
+
+.core-detail-page {
+    padding: 140px 0 80px; /* Reduced top/bottom padding */
+    position: relative;
+    overflow: hidden;
+}
 
 .architecture-grid {
-
-display: grid;
-
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-gap: 40px;
-
+    display: grid;
+    /* CHANGED: Reduced min-width from 320px to 240px to fit 4-5 cards across */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px; /* Reduced gap */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    perspective: 1500px;
 }
 
 .architecture-module {
-
-position: relative;
-
-background: rgba(26, 26, 32, 0.6);
-
-border-radius: 15px;
-
-overflow: hidden;
-
-transition: all 0.3s ease;
-
-padding: 40px;
-
-border: 1px solid transparent;
-
+    position: relative;
+    /* CHANGED: Removed aspect-ratio: 1/1 so they don't become giant squares */
+    min-height: 280px;
+    background: radial-gradient(circle at 30% 30%, rgba(0,229,255,0.12), transparent 50%),
+                linear-gradient(145deg, rgba(15,15,25,0.98), rgba(5,5,15,0.99));
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 15px; /* Slightly smaller radius */
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.6),
+        0 0 10px rgba(0,229,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content to top */
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px; /* Reduced padding inside card */
+    text-decoration: none;
+    color: inherit;
 }
 
+/* HOVER EFFECTS */
 .architecture-module:hover {
-
-transform: scale(1.05);
-
-border-color: var(--cyber-blue);
-
-box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-
+    transform: translateY(-10px) scale(1.02); /* More subtle lift */
+    border-color: var(--dragon-orange);
+    box-shadow:
+        0 15px 40px rgba(255,69,0,0.25),
+        0 0 30px rgba(255,69,0,0.15);
+    z-index: 10;
 }
 
+/* ICON SIZING */
 .module-icon {
-
-font-size: 3em;
-
-margin-bottom: 20px;
-
-display: block;
-
+    font-size: 3.5em; /* CHANGED: Reduced from 5.5em */
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 20px currentColor);
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
 }
 
+.architecture-module:hover .module-icon {
+    transform: scale(1.1) rotate(10deg); /* Subtle rotation */
+    color: var(--neon-green) !important;
+}
+
+/* TEXT SIZING */
 .architecture-module h3 {
-
-font-family: var(--font-quantum);
-
-font-size: 1.5em;
-
-color: var(--cyber-blue);
-
-margin-bottom: 15px;
-
-letter-spacing: 2px;
-
+    font-family: var(--font-quantum);
+    font-size: 1.1em; /* CHANGED: Reduced from 1.5em */
+    letter-spacing: 2px;
+    margin: 10px 0;
+    color: var(--cyber-blue);
+    text-shadow: 0 0 10px rgba(0,229,255,0.4);
+    position: relative;
+    z-index: 2;
 }
 
 .architecture-module p {
+    font-size: 0.9em; /* CHANGED: Smaller body text */
+    line-height: 1.5;
+    color: rgba(248,249,250,0.7);
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
 
-font-size: 1em;
-
-line-height: 1.7;
-
-color: rgba(248, 249, 250, 0.8);
-
-margin-bottom: 0;
-
+.architecture-module:hover p {
+    color: var(--ghost-white);
+    opacity: 1;
 }
 
 
