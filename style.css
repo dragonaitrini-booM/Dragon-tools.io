@@ -1,291 +1,359 @@
-/* === RESET & BASE FIXES (replace previous invalid reset) === */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* keep :root variables unchanged (leave your color system & fonts intact) */
-
-/* BASE TYPOGRAPHY TUNING */
-html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: var(--font-neural);
-  background: var(--neural-dark);
-  color: var(--ghost-white);
-  line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-size: 16px;
 }
 
-/* NAVIGATION - reduce visual weight, keep style */
-.quantum-nav {
-  position: fixed;
-  inset: 0 0 auto 0;
-  background: rgba(10,10,13,.95);
-  backdrop-filter: blur(14px);
-  border-bottom: 2px solid var(--cyber-blue);
-  z-index: 1000;
-}
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 12px 22px; /* tightened */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.nav-dragon-logo { width: 44px; height: 44px; border-radius: 8px; }
-.brand-text {
-  font-family: var(--font-quantum);
-  font-size: 1.15rem; /* lowered */
-  font-weight: 900;
-  color: var(--cyber-blue);
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px var(--cyber-blue);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* HERO - reduce headline scale and spacing for professional layout */
-.hero-matrix {
-  min-height: 84vh; /* slightly less than full to avoid huge hero */
-  padding-top: 84px; /* account for fixed nav */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  background-attachment: fixed;
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
-.quantum-title {
-  font-family: var(--font-quantum);
-  font-size: clamp(2rem, 6vw, 3.2rem); /* caps oversize headings */
-  font-weight: 900;
-  margin-bottom: 14px;
-  text-shadow: var(--shadow-cyber);
-  line-height: 1.05;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
 }
 
-.mission-statement {
-  font-family: var(--font-cyber);
-  font-size: clamp(1rem, 2.6vw, 1.35rem);
-  font-weight: 700;
-  color: var(--dragon-orange);
-  margin-bottom: 22px;
-  text-shadow: var(--shadow-dragon);
+.logo h1 {
+    font-size: 24px;
+    color: #2563eb;
+    font-weight: 700;
 }
 
-/* POWER METRICS - small improvements */
-.metric-value { font-size: clamp(1.4rem, 3.2vw, 2rem); }
-
-/* ARCHITECTURE GRID — make reliably square cards and prevent overflow */
-
-/* Fixed / clean architecture-grid definition */
-.architecture-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 24px;
-  perspective: 1500px;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-/* Card sizing — limit maximum physical footprint */
-.architecture-module {
-  position: relative;
-  aspect-ratio: 1 / 1;             /* ensures perfect square cards */
-  width: 100%;
-  max-width: 420px;                /* prevents cards from becoming huge on wide screens */
-  margin: 0 auto;
-  background: radial-gradient(circle at 30% 30%, rgba(0,229,255,0.12), transparent 50%),
-              linear-gradient(145deg, rgba(15,15,25,0.98), rgba(5,5,15,0.99));
-  border: 1px solid rgba(0,229,255,0.15);
-  border-radius: 16px;             /* slightly smaller radius for tighter feel */
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform .45s cubic-bezier(.23,1,.32,1), box-shadow .45s;
-  transform-style: preserve-3d;
-  box-shadow:
-    0 6px 28px rgba(0,0,0,0.6),
-    0 0 18px rgba(0,229,255,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;     /* align content to top for consistent spacing */
-  align-items: center;
-  text-align: center;
-  padding: 28px;                   /* reduced padding to fit text inside */
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* ensure hover effects remain but not oversized */
-.architecture-module:hover {
-  transform: translateY(-12px) rotateX(6deg) rotateY(4deg) scale(1.03);
-  border-color: var(--dragon-orange);
-  box-shadow:
-    0 26px 68px rgba(255,69,0,0.28),
-    0 0 46px rgba(255,69,0,0.18),
-    inset 0 0 46px rgba(255,69,0,0.12);
-  z-index: 10;
+.nav-links a:hover {
+    color: #2563eb;
 }
 
-/* glowing background behind icon */
-.architecture-module::before {
-  content: '';
-  position: absolute;
-  inset: 18%;                      /* smaller inset keeps glow visible without eating content */
-  background: radial-gradient(circle, var(--cyber-blue) 0%, transparent 60%);
-  border-radius: 50%;
-  opacity: 0;
-  filter: blur(28px);
-  transition: opacity .45s ease;
-  pointer-events: none;
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.architecture-module:hover::before {
-  opacity: 0.42;
-  animation: coreBeat 2s ease-in-out infinite;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
 }
 
-/* Icon sizing scaled down for professional hierarchy */
-.module-icon {
-  font-size: clamp(2.2rem, 5.5vw, 4rem); /* responsive, won't blow up */
-  margin-bottom: 14px;
-  filter: drop-shadow(0 0 26px currentColor);
-  transition: transform .6s ease, color .45s ease, filter .45s ease;
-  position: relative;
-  z-index: 2;
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* Hover icon behaviour (kept but toned) */
-.architecture-module:hover .module-icon {
-  transform: scale(1.15) rotate(360deg);
-  color: var(--neon-green) !important;
-  filter: drop-shadow(0 0 34px var(--neon-green));
-  text-shadow:
-    0 0 16px var(--neon-green),
-    0 0 28px var(--neon-green);
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Title & text: use clamps and line-clamp for overflow protection */
-.architecture-module h3 {
-  font-family: var(--font-quantum);
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  letter-spacing: 2px;
-  margin: 10px 0;
-  color: var(--cyber-blue);
-  text-shadow: 0 0 14px rgba(0,229,255,0.6);
-  transition: color .35s ease, text-shadow .35s ease;
-  z-index: 2;
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-/* Prevent long titles from breaking layout */
-.architecture-module h3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.15;
+.btn-primary {
+    background: #2563eb;
+    color: white;
 }
 
-/* Body copy in cards: limit lines, ensure readable sizing */
-.architecture-module p {
-  font-size: clamp(.88rem, 1.6vw, 1rem);
-  line-height: 1.45;
-  color: rgba(248,249,250,0.92);
-  margin-top: 8px;
-  z-index: 2;
-  max-width: 90%;
-  display: -webkit-box;
-  -webkit-line-clamp: 6; /* keep copy readable, no overflow */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
 }
 
-/* if content is longer than clamps, make a scrollable content area (optional) */
-.architecture-module .card-content-scroll {
-  width: 100%;
-  height: 100%;
-  padding: 0 6%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: #f8fafc;
 }
 
-/* make special-card slightly smaller border-radius and preserved effect */
-.special-card {
-  border-radius: 18px;
-  border: 2px solid var(--plasma-purple) !important;
+.services h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #1e293b;
 }
 
-/* ensure scanline effect doesn't overflow */
-.architecture-module::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-  pointer-events: none;
-}
-.architecture-module:hover::after {
-  animation: scanline 1.2s linear infinite;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-/* TOOLTIP adjustments: keep look but ensure it fits narrow viewports */
-[data-tooltip]::after {
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
-  white-space: nowrap;
-  max-width: 90vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* RESPONSIVE TUNING */
-@media (max-width: 1100px) {
-  .architecture-grid { gap: 20px; }
-  .architecture-module { max-width: 360px; padding: 22px; }
-  .module-icon { font-size: clamp(2rem, 6.5vw, 3.5rem); }
-}
-
-@media (max-width: 768px) {
-  /* smaller nav */
-  .nav-container { padding: 12px 18px; }
-  .brand-text { font-size: 1rem; letter-spacing: 1.5px; }
-
-  /* hero scale */
-  .quantum-title { font-size: clamp(1.75rem, 7.5vw, 2.5rem); }
-  .mission-statement { font-size: clamp(.95rem, 3.5vw, 1.05rem); }
-
-  /* stack metrics */
-  .power-metrics { flex-direction: column; gap: 16px; }
-
-  /* cards become single-column with reduced padding */
-  .architecture-grid { grid-template-columns: 1fr; gap: 18px; padding: 16px; }
-  .architecture-module {
-    max-width: 680px;
-    padding: 18px;
+.service-card {
+    background: white;
+    padding: 30px;
     border-radius: 12px;
-  }
-  .module-icon { font-size: clamp(1.8rem, 7vw, 3rem); }
-  .architecture-module h3 { font-size: 1.05rem; -webkit-line-clamp: 2; }
-  .architecture-module p { -webkit-line-clamp: 5; }
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-/* small accessibility / focus */
-.nav-link:focus, .cta-fork:focus, .cta-final:focus {
-  outline: 3px solid rgba(0,229,255,0.15);
-  outline-offset: 3px;
+.service-card:hover {
+    transform: translateY(-5px);
 }
 
-/* keep the rest of your stylesheet (animations, color variables, etc.) unchanged */
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.service-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+.about p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #64748b;
+    max-width: 800px;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #1e293b;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-item {
+    margin-bottom: 30px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 16px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.contact-item p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Form Styles */
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .services h2,
+    .about h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .contact-form {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .services,
+    .about,
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .service-card,
+    .contact-form {
+        padding: 20px;
+    }
+}
