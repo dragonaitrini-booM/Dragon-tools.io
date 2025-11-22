@@ -828,83 +828,61 @@ letter-spacing: 3px;
 
 }
 
-/* Architecture Grid and Modules */
-
+/* Architecture Grid and Modules - COMPACT DASHBOARD */
 .architecture-grid {
-
 display: grid;
-
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-gap: 40px;
-
+/* Reduced minmax for more columns, tighter feel */
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+/* Reduced gap for density */
+gap: 20px;
 }
 
 .architecture-module {
-
 position: relative;
-
 background: rgba(26, 26, 32, 0.6);
-
 border-radius: 15px;
-
 overflow: hidden;
-
 transition: all 0.3s ease;
-
-padding: 40px;
-
+/* Reduced padding for a smaller card footprint */
+padding: 25px;
 border: 1px solid transparent;
-
+/* Ensure cards have a minimum height to avoid awkward wrapping */
+min-height: 220px;
+display: flex;
+flex-direction: column;
 }
 
 .architecture-module:hover {
-
-transform: scale(1.05);
-
+transform: translateY(-5px) scale(1.02); /* More subtle hover */
 border-color: var(--cyber-blue);
-
 box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-
 }
 
 .module-icon {
-
-font-size: 3em;
-
-margin-bottom: 20px;
-
+/* Reduced icon size */
+font-size: 2.5em;
+margin-bottom: 15px;
 display: block;
-
 }
 
 .architecture-module h3 {
-
 font-family: var(--font-quantum);
-
-font-size: 1.5em;
-
+/* Reduced font size for title */
+font-size: 1.3em;
 color: var(--cyber-blue);
-
-margin-bottom: 15px;
-
-letter-spacing: 2px;
-
+margin-bottom: 10px;
+letter-spacing: 1.5px;
 }
 
 .architecture-module p {
-
-font-size: 1em;
-
-line-height: 1.7;
-
+/* Reduced font size for description */
+font-size: 0.9em;
+line-height: 1.6;
 color: rgba(248, 249, 250, 0.8);
-
 margin-bottom: 0;
-
+/* Makes sure the paragraph takes available space */
+flex-grow: 1;
 }
-
-
 
 .ethos-grid {
 
